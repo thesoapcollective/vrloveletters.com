@@ -2,6 +2,7 @@ $white: #fff;
 $black: #000;
 
 $base-font-size: 24px;
+$font-size-small: 18px;
 $video-width: 960px;
 $video-height: 540px;
 $video-width-medium: 640px;
@@ -152,7 +153,9 @@ h1 {
 
 .meta-container {
   height: $meta-height;
+  display: block;
   text-align: left;
+  pointer-events: none;
 }
 
 .meta-avatar {
@@ -169,6 +172,28 @@ h1 {
 .meta-info {
   display: inline-block;
   vertical-align: middle;
+}
+
+.meta-arrow-container {
+  width: 36px;
+  height: 36px;
+  margin-top: 10px;
+  position: relative;
+  float: right;
+  background: rgba($black,0.15);
+  border-radius: 18px;
+}
+
+.meta-arrow {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  border-style: solid;
+  border-width: 9px 0 9px 15.6px;
+  border-color: transparent transparent transparent $white;
 }
 
 .video-container {
@@ -320,6 +345,38 @@ h1 {
   z-index: 20;
 }
 
+.youtube-download {
+  margin-top: 18px;
+  padding: 0 18px;
+  display: none;
+  text-align: center;
+
+  p {
+    margin-bottom: 9px;
+  }
+}
+
+.app-store-badge,
+.google-play-badge {
+  @include text-overflow;
+  width: 122px;
+  height: 36px;
+  display: inline-block;
+  vertical-align: top;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 122px 36px;
+}
+
+.app-store-badge {
+  margin-right: 9px;
+  background-image: image-url('app_store_badge.png');
+}
+
+.google-play-badge {
+  background-image: image-url('google_play_badge.png');
+}
+
 footer {
   width: 100%;
   position: absolute;
@@ -337,5 +394,74 @@ footer {
 
   .bullet-list {
     top: ($video-height-medium / 2) + $bullet-vertical-adjustment;
+  }
+}
+
+@media only screen and (max-width: 667px) {
+  html {
+    height: 100%;
+    font-size: $font-size-small;
+  }
+
+  body {
+    height: auto;
+  }
+
+  h1 {
+    width: 72px;
+    height: 72px;
+    margin-top: 36px;
+    margin-bottom: 8px;
+    background-size: 72px 72px;
+  }
+
+  .slide-container {
+    height: auto;
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+
+  .slide {
+    height: auto;
+    display: block;
+    position: static;
+    border-bottom: 1px solid rgba($white,0.25);
+
+    &:first-child {
+      padding-bottom: 36px;
+    }
+  }
+
+  .slide-content {
+    max-width: none;
+    height: auto;
+    position: static;
+  }
+
+  .meta-container {
+    height: auto;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    pointer-events: auto;
+  }
+
+  .youtube-download {
+    display: block;
+  }
+
+  .bullet-container,
+  .arrow-container,
+  .video-container,
+  .browser-warning {
+    display: none;
+  }
+
+  .browser-warning,
+  footer {
+    position: static;
+  }
+
+  footer {
+    margin-top: 72px;
   }
 }
