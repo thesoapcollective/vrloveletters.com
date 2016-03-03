@@ -201,13 +201,13 @@ h1 {
   position: relative;
   top: ($video-width / 2) + $bullet-vertical-adjustment;
   text-align: center;
-  pointer-events: auto;
 }
 
 .bullet {
   margin-right: 9px;
   display: inline-block;
   vertical-align: top;
+  pointer-events: auto;
 
   a {
     width: $bullet-size;
