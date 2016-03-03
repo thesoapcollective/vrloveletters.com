@@ -4,22 +4,29 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <meta content="" name='description'>
+    <meta content="Experience a place through the eyes of people who love it most." name='description'>
     <meta content="http://www.vrloveletters.com" property="og:url">
     <meta content="website" property="og:type">
     <meta content="VR Love Letters" property="og:title">
-    <meta content="" property="og:description">
-    <!-- <meta content="<%= url('/images/profile_logo.png') %>" property="og:image"> -->
-    <link href="<%= url('/apple-touch-icon.png') %>" rel="apple-touch-icon">
-    <link href="<%= url('/favicon.png') %>" rel="shortcut icon" type="image/x-icon">
+    <meta content="Experience a place through the eyes of people who love it most." property="og:description">
+    <meta content="http://www.vrloveletters.com/open_graph.png" property="og:image">
+    <link href="http://www.vrloveletters.com/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="http://www.vrloveletters.com/favicon.png" rel="shortcut icon" type="image/x-icon">
     <title>VR Love Letters</title>
     <%= stylesheet_link_tag :site %>
   </head>
 
   <body class="<%= page_classes %>">
+    <div class="browser-warning ta-center hide">
+      <p>Looks like your browser doesn’t support 360 video!<br />For the best viewing experience, watch VR Love Letters in <a class="bold hover-underline" href="https://www.google.com/chrome/" target="_blank">Chrome</a>.</p>
+    </div>
     <%= yield %>
+    <footer class="ta-center">
+      <p>A project of <a class="bold hover-underline" href="http://www.thesoapcollective.com" target="_blank">The Soap Collective</a><br />&copy; 2016, All rights reserved.</p>
+    </footer>
     <script src="https://use.typekit.net/dhl1ipz.js" type="text/javascript"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
     <%= javascript_include_tag :all %>
   </body>
 </html>
