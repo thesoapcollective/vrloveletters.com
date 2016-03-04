@@ -40,7 +40,7 @@ configure :build do
   activate :autoprefixer
 
   # Enable cache buster
-  activate :asset_hash, ignore: 'favicon.png|open_graph.jpg|apple-touch-icon.png'
+  activate :asset_hash, ignore: [/favicon.png/,/open_graph.jpg/,/apple-touch-icon.png/]
 
   # Use relative URLs
   activate :relative_assets
