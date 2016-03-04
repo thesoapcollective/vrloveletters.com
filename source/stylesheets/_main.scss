@@ -1,8 +1,6 @@
 $white: #fff;
 $black: #000;
 
-$base-font-size: 24px;
-$font-size-small: 18px;
 $video-width: 960px;
 $video-height: 540px;
 $video-width-medium: 640px;
@@ -11,6 +9,9 @@ $meta-height: 72px;
 $bullet-size: 12px;
 $bullet-top-margin: 18px;
 $bullet-vertical-adjustment: ($bullet-size / 2) + $bullet-top-margin;
+
+$base-font-size: 24px;
+$font-size-small: 18px;
 
 $slide-left-speed: .5s;
 $opacity-speed: .25s;
@@ -178,6 +179,7 @@ h1 {
   width: 36px;
   height: 36px;
   margin-top: 10px;
+  display: none;
   position: relative;
   float: right;
   background: rgba($black,0.15);
@@ -347,7 +349,7 @@ h1 {
 
 .youtube-download {
   margin-top: 18px;
-  padding: 0 18px;
+  padding: 0 36px;
   display: none;
   text-align: center;
 
@@ -386,7 +388,8 @@ footer {
   font-size: 0.75rem;
 }
 
-@media only screen and (max-height: 1023px) {
+@media only screen and (max-width: 1023px),
+       only screen and (max-height: 1023px) {
   .slide-content {
     max-width: $video-width-medium;
     height: $video-height-medium + $meta-height;
@@ -397,7 +400,18 @@ footer {
   }
 }
 
-@media only screen and (max-width: 667px) {
+@media only screen and (max-width: 850px) {
+  .arrow-left {
+    left: 36px;
+  }
+
+  .arrow-right {
+    right: 36px;
+  }
+}
+
+@media only screen and (max-width: 767px),
+       only screen and (max-height: 666px) {
   html {
     height: 100%;
     font-size: $font-size-small;
@@ -438,6 +452,10 @@ footer {
     position: static;
   }
 
+  .meta-arrow-container {
+    display: block;
+  }
+
   .meta-container {
     height: auto;
     padding-top: 9px;
@@ -463,5 +481,13 @@ footer {
 
   footer {
     margin-top: 72px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .slide-container,
+  .youtube-download {
+    padding-left: 18px;
+    padding-right: 18px;
   }
 }
